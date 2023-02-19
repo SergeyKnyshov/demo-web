@@ -1,24 +1,27 @@
 package com.example.demoweb.service;
 
+import ch.qos.logback.core.BasicStatusManager;
 import com.example.demoweb.model.Post;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 @Service
 public class PostService {
-    public List<Post> listAllPosts(){
+    List<Post> posts = new ArrayList<>() {{
+        add(new Post("Даб даб я", new Date(), 0));
+        add(new Post("Тот самый", new Date(), 0));
+        add(new Post("Мистер Бомбастик", new Date(), 0));
+    }};
 
-        List<Post> list = new ArrayList<>();
+    public void create(String text) {
+        posts.add(new Post(text, new Date(), 0));
+    }
 
-        Post firstPost = new Post("Даб даб я", 1212121212121L,0);
-        Post secondPost = new Post("Тот самый",1212121212121L,0);
-        Post thirdPost = new Post("Мистер Бомбастик",1212121212121L,0);
+    public List<Post> listAllPosts() {
 
-        list.add(firstPost);
-        list.add(secondPost);
-        list.add(thirdPost);
-        return list;
+        return posts;
     }
 }
