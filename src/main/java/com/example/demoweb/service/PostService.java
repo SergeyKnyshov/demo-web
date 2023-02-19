@@ -12,9 +12,9 @@ public class PostService {
 
         List<Post> list = new ArrayList<>();
 
-        Post firstPost = new Post("Даб даб я",0);
-        Post secondPost = new Post("Тот самый",0);
-        Post thirdPost = new Post("Мистер Бомбастик",0);
+        Post firstPost = new Post("Даб даб я", 1212121212121L,0);
+        Post secondPost = new Post("Тот самый",1212121212121L,0);
+        Post thirdPost = new Post("Мистер Бомбастик",1212121212121L,0);
 
         list.add(firstPost);
         list.add(secondPost);
