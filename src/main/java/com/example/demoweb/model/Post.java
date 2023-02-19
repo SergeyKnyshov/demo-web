@@ -8,20 +8,28 @@ public class Post {
     private String text;
 
     private Integer likes;
-    public Post(String text, Date creationDate, Integer likes){
+    private Long id;
+    public Post(Long id, String text, Date creationDate){
+        this.id = id;
         this.text = text;
         this.creationDate = creationDate;
-        this.likes = likes;
+        this.likes = 0;
+
 
     }
 
-
+    public Long getId(){return id;}
     public String getText() {
         return text;
     }
     public Integer getLikes() {
         return likes;
     }
+
+    public void setLikes(Integer likes) {
+        this.likes = likes;
+    }
+
     public Date getCreationDate(){ return creationDate;}
 
 }
